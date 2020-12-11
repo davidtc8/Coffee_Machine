@@ -1,3 +1,5 @@
+#This is the data needed for the coffe machine!
+
 menu = {
     "espresso": {
         "ingredients": {
