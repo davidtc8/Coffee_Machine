@@ -86,6 +86,7 @@ while coffe_is_on:
                 print(f"Here's your change: {round(change, 2)}")
                 print(f"Latte ingredients needed: {latte_ingredients_amount}")
                 print(f"Ingredients left: {ingredients_amount}")
+                print(f"Here's your {decision} ☕")
             else:
                 print("You don't have enough money, sorry Unu")
                 game_over()
@@ -98,6 +99,7 @@ while coffe_is_on:
                 print(f"Here's your change: {round(change, 2)}")
                 print(f"Capuccino ingredientes finish: {espresso_ingredients_amount}")
                 print(f"Ingredients left: {ingredients_amount}")
+                print(f"Here's your {decision} ☕")
             else:
                 print("You don't have enough money, sorry Unu")
                 game_over()
@@ -107,9 +109,10 @@ while coffe_is_on:
                 coffee -= cappuccino_ingredients['coffee']
                 change = total_money - cappuccino_cost
                 money += cappuccino_cost
-                print(f"Here's your change: {round(change, 2)}")
+                print(f"Here's your change 💸: {round(change, 2)}")
                 print(f"Capuccino ingredientes finish: {cappuccino_ingredients_amount}")
                 print(f"Ingredients left: {ingredients_amount}")
+                print(f"Here's your {decision} ☕")
             else:
                 print("You don't have enough money, sorry Unu")
                 game_over()
@@ -124,45 +127,45 @@ while coffe_is_on:
         global game_finished
         if decision == 'latte':
             if water < latte_ingredients['water']:
-                print('There is not enough water')
+                print('There is not enough water 🧊')
                 game_finished = True
                 return "Not enough ingredients"
             elif milk < latte_ingredients['milk']:
-                print('There is not enough milk')
+                print('There is not enough milk 🥛')
                 game_finished = True
                 return "Not enough ingredients"
             elif coffee < latte_ingredients['coffee']:
-                print('There is not enough coffee')
+                print('There is not enough coffee ☕')
                 game_finished = True
                 return "Not enough ingredients"
             else:
                 ingredients_amount -= latte_ingredients_amount
         if decision == 'cappuccino':
             if water < cappuccino_ingredients['water']:
-                print('There is not enough water')
+                print('There is not enough water 🧊')
                 game_finished = True
                 return "Not enough ingredients"
             elif milk < cappuccino_ingredients['milk']:
-                print('There is not enough milk')
+                print('There is not enough milk 🥛')
                 game_finished = True
                 return "Not enough ingredients"
             elif coffee < cappuccino_ingredients['coffee']:
-                print('There is not enough coffee')
+                print('There is not enough coffee ☕')
                 game_finished = True
                 return "Not enough ingredients"
             else:
                 ingredients_amount -= cappuccino_ingredients_amount
         if decision == 'espresso':
             if water < espresso_ingredients['water']:
-                print('There is not enough water')
+                print('There is not enough water 🧊')
                 game_finished = True
                 return "Not enough ingredients"
             elif milk < espresso_ingredients['milk']:
-                print('There is not enough milk')
+                print('There is not enough milk 🥛')
                 game_finished = True
                 return "Not enough ingredients"
             elif coffee < espresso_ingredients['coffee']:
-                print('There is not enough coffee')
+                print('There is not enough coffee ☕')
                 game_finished = True
                 return "Not enough ingredients"
             else:
@@ -197,10 +200,10 @@ while coffe_is_on:
             time.sleep(5)
             clear()
         elif decision == 'report':
-            print(f"Water: {str(water)}" + 'ml')
-            print(f"Milk: {str(milk)}" + 'ml')
-            print(f"Coffee: {str(coffee)}" + 'g')
-            print("Money in the machine: " + '$' + str(money))
+            print(f"Water: {str(water)}" + 'ml 🧊')
+            print(f"Milk: {str(milk)}" + 'ml 🥛')
+            print(f"Coffee: {str(coffee)}" + 'g ☕')
+            print("Money in the machine: " + '$' + str(money) + '💸')
             order = input("Would you like to make an order? (Type 'y' or 'n'): ")
             if order == 'y':
                 clear()
@@ -221,7 +224,7 @@ while coffe_is_on:
         """
         global coffe_is_on
         print('\n')
-        drink = input("Would you like to buy another drink?: (Type 'y' or 'n'): ")
+        drink = input("Would you like to buy another drink? ☕: (Type 'y' or 'n'): ")
         if drink == 'n':
             game_over()
             clear()
@@ -237,7 +240,7 @@ while coffe_is_on:
         print(art.logo)
         global total_money
         global enough_ing
-        decision = input("What would you like? (espresso/latte/cappuccino): ")
+        decision = input("What would you like 🤗? (espresso/latte/cappuccino): ")
         if decision == 'report':
             decisionf(decision)
         elif decision == 'off':
@@ -245,7 +248,7 @@ while coffe_is_on:
         enough_ing = enough_ingredients(decision)
         if game_finished is True:
             if enough_ing == "Not enough ingredients":
-                print(f"Are you nuts?, we don't have ingredients left to give you your filthy {decision}")
+                print(f"Are you nuts 🤪?, we don't have ingredients left to give you your filthy {decision} 😒")
                 time.sleep(5)
                 game_over()
                 clear()
